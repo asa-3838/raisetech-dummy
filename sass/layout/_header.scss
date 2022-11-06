@@ -1,0 +1,229 @@
+@use "../global/mixins" as m;
+
+.l-header {
+  background: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 400;
+  box-shadow: 0 3px 6px -2px rgb(0 0 0 / 10%);
+  @include m.tab {
+    display: block;
+    box-shadow: none;
+  }
+  .p-header {
+    display: flex;
+    align-items: center;
+    span {
+      @include m.pc {
+        display: none;
+      }
+      margin-left: 16px;
+      line-height: 1.3;
+      font-weight: 900;
+      }
+    }
+  .p-header__logo {
+    @include m.tab {
+      margin: 10px;
+    }
+    margin-left: 21px;
+    }
+  .p-logo {
+    @include m.tab {
+      width: auto;
+      height: 30px;
+    }
+    width: 157px;
+    height: 70px;
+    display: flex;
+  }
+}
+
+.nav__btn {
+  display: none;
+  @include m.tab {
+    transition: .5s;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  a {
+    @include m.tab {
+      display: block;
+      position: relative;
+      height: 50px;
+      width: 50px;
+    }
+  }
+  a:before {
+    @include m.tab {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 14px;
+      width: 23px;
+      height: 2px;
+      background-color: #2498b3;
+      transition: .2s;
+    }
+  }
+  a:after {
+    @include m.tab {
+      position: absolute;
+      bottom: 15px;
+      left: 14px;
+      content: "";
+      width: 23px;
+      height: 2px;
+      background-color: #2498b3;
+      transition: .2s;
+    }
+  }
+  span {
+    @include m.tab {
+      position: absolute;
+      top: 24px;
+      left: 14px;
+      width: 23px;
+      height: 2px;
+      background-color: #2498b3;
+      transition: .2s;
+    }
+  }
+}
+
+.nav__btn.open {
+  background-color: #2498b3;
+  transition: .5s;
+  a:before {
+    transform: rotate(-45deg);
+    transform-origin: top right;
+    background-color: #fff;
+    transition: .2s;
+    top: 16px;
+    left: 10px;
+  }
+  span {
+    opacity: 0;
+    transition: .2s;
+  }
+  a:after {
+    transform: rotate(-135deg);
+    transform-origin: bottom left;
+    background-color: #fff;
+    transition: .2s;
+    top: 30.5px;
+    left: 34px;
+  }
+}
+
+.p-header__menu {
+  display: flex;
+  font-weight: 700;
+    @include m.tab {
+      display: block;
+    }
+  .menu-item-has-children {
+    position: relative;
+    white-space: nowrap;
+    font-size: 1.6rem;
+    @include m.tab {
+      display: block;
+      width: 100%;
+      background-color: #fff;
+    }
+  }
+  .menu-item-has-children:not(.cv) > a:hover {
+    background-color: #d4f1f8;
+    @include m.tab{
+      background-color: #f3fafb;
+    }
+  }
+  .menu-item-has-children:not(.teacher) > a:before {
+    @include m.tab{
+      position: absolute;
+      margin-top: -1px;
+      content: "";
+      right: 13px;
+      width: 24px;
+      height: 2px;
+      background-color: #121212;
+    }
+  }
+  .menu-item-has-children.close:not(.teacher) > a:after {
+    @include m.tab{
+      position: absolute;
+      content: "";
+      right: 24px;
+      width: 2px;
+      height: 24px;
+      margin-top: -1px;
+      background-color: #121212;
+    }
+  }
+  .cv {
+    background-color: #2498B3;
+    @include m.tab {
+      display: none;
+    }
+  }
+  .cv > a {
+    color: #fff;
+  }
+  a {
+    display :flex;
+    align-items: center;
+    height: 70px;
+    padding: 0 15px;
+    @include m.tab {
+      padding: 12px 12px 12px 10px;
+      height: auto;
+    }
+  }
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  @include m.tab {
+    position: relative;
+    top: 0;
+  }
+  li {
+    background-color: #e9f8fb;
+    font-weight: 400;
+    @include m.tab {
+      background-color: #fff;
+      width: 100%;
+    }
+  }
+  li a:hover {
+    background-color: #fff;
+    color: #2498b3;
+    @include m.tab {
+      background-color: #f3fafb;
+      color: inherit;
+    }
+  }
+  a {
+    padding: 16.5px 60px 16.5px 15px;
+    height: auto;
+    @include m.tab {
+      padding: 12px auto 12px 25px;
+    }
+  }
+}
+
+#nav {
+  @include m.tab {
+    display: none;
+  }
+}

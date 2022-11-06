@@ -1,0 +1,183 @@
+@use "../global/mixins" as m;
+
+.l-main {
+  position: relative;
+  height: 650px;
+  overflow: hidden;
+  background: transparent url(../images/bg-hero3.png) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-top: 70px;
+  @include m.tab {
+    margin-top: 50px;
+  }
+  @include m.sp {
+    height: 300px;
+    padding-bottom: 320px;
+    background-position: center -25px;
+  }
+  
+  .l-main__layer1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 80px;
+    background: transparent url(../images/bg-hero1.png) no-repeat center center;
+    z-index: 200;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include m.sp {
+      background-size: cover;
+      background-position: center -30px;
+      padding-top: 164px;
+    }
+  }
+  .p-main__text {
+    max-width: 530px;
+    width: 414px;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 43px 40px 19px;
+    background-color: #fff;
+    @include m.sp {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 0;
+      padding: 9px 0 13px;
+    }
+    .p-text__title {
+      margin-bottom: 20px;
+      @include m.sp {
+        display: none;
+      }
+    }
+    img {
+      width: 280px;
+      margin: 0 auto;
+    }
+    .p-text__sub {
+      padding-bottom: 50px;
+      font-weight: 700;
+      line-height: 1.7;
+      @include m.sp {
+        font-size: 1.3rem;
+        padding: 6.5px 0;
+      }
+    }
+    .p-text__button {
+      margin-bottom: 30px;
+      @include m.sp {
+        margin: 16px 0;
+      }
+    }
+    .p-button {
+      padding: 21px 38px;
+      background-color: #2498b3;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 700;
+      border-radius: 4px;
+      transition: .5s;
+      @include m.sp {
+        padding: 9.5px 19px;
+        font-size: 1.6rem;
+        transition: .5s;
+      }
+    }
+  }
+  .l-main__layer2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent url(../images/bg-hero2.png) no-repeat center center;
+    background-size: cover 100%;
+    z-index: 100;
+    @include m.sp {
+      background-size: cover;
+      background-position: center -25px;
+    }
+  }
+}
+
+.l-blacksection {
+  z-index: 300;
+  background-color: #000;
+  padding: 64px 0;
+  h3,p {
+    color: #fff;
+  }
+  .l-recommendation__wrapper {
+    margin: 0 auto;
+    max-width: 1078px;
+    @include m.sp {
+      text-align: center;
+      margin: 0 19px;
+    }
+  }
+  .l-recommendation {
+    position: relative;
+    margin-top: -263px;
+    display: flex;
+    z-index: 300;
+    justify-content: center;
+    @include m.sp {
+      display: block;
+      position: static;
+      margin-top: 0px;
+    }
+  }
+  .p-recommendation__title {
+    text-align: center;
+  }
+  .p-recommendation__entry {
+    max-width: 1078px;
+    margin: 0 50px;
+    width: 229px;
+    @include m.tab-side {
+    width: 29.33%;
+    margin: 0 2%;
+    }
+    @include m.sp {
+      margin: 0 auto;
+      width: auto;
+      margin-bottom: 4em;
+    }
+  }
+  .p-recommendation__entry:last-child {
+    @include m.sp {
+    margin-bottom: 1em;
+    }
+  }
+  .p-recommendation__icon {
+    width: 230px;
+    height: 230px;
+    background-color: #fff;
+    border: solid 6px #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 5px;
+  }
+  h3 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 13px;
+  }
+  .p-recommendation__body {
+    text-align: center;
+    line-height: 1.7;
+    font-weight: 700;
+    p {
+      display: inline-block;
+      text-align: left;
+    }
+  }
+  .fas {
+    font-size: 130px;
+    color: #000;
+  }
+}
